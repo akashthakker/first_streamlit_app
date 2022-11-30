@@ -55,7 +55,7 @@ streamlit.write('Thanks for adding', fruit)
 
 # add_my_fruit=data.insert(2, "Team", "Any")
 
-my_curr.execute("insert into fruit_load_list values('from streamlit')")
+my_cur.execute("insert into fruit_load_list values('from streamlit')")
 
 
 
