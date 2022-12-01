@@ -60,8 +60,8 @@ if streamlit.button('Get Fruit Load List'):
   streamlit.dataframe(my_data_rows)
    
 except URLError as e:
+  streamlit.error()
   
-     streamlit.stop()
           
 
 
