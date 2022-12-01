@@ -37,7 +37,7 @@ def get_fruityvice_data(this_fruit_choice):
      return fruityvice_normalized
 
 #New section to display fruitvice api response
-streamlit.header("Fruityvice Fruit Advice!")
+streamlit.header('Fruityvice Fruit Advice!')
 try:
   fruit_choice = streamlit.text_input('What fruit would you like information about?')
   if not fruit_choice:
@@ -53,32 +53,24 @@ try:
                                       
 
 
+# streamlit.stop()
 
-#take the jason version of the response and normalize it
-
-#output it the screen as a table
-
-
-
-#dont run here while we troubleshoot
-streamlit.stop()
-
-import snowflake.connector
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-my_cur = my_cnx.cursor()
-my_cur.execute("select * from fruit_load_list")
-my_data_rows= my_cur.fetchall()
-streamlit.header("The fruit load list contains:")
-streamlit.dataframe(my_data_rows)
+# import snowflake.connector
+# my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+# my_cur = my_cnx.cursor()
+# my_cur.execute("select * from fruit_load_list")
+# my_data_rows= my_cur.fetchall()
+# streamlit.header("The fruit load list contains:")
+# streamlit.dataframe(my_data_rows)
 
 
 
-fruit= streamlit.text_input('What fruit would you like to add?','jackfruit')
-streamlit.write('Thanks for adding', fruit)
+# fruit= streamlit.text_input('What fruit would you like to add?','jackfruit')
+# streamlit.write('Thanks for adding', fruit)
 
-# add_my_fruit=data.insert(2, "Team", "Any")
+# # add_my_fruit=data.insert(2, "Team", "Any")
 
-my_cur.execute("insert into fruit_load_list values('from streamlit')")
+# my_cur.execute("insert into fruit_load_list values('from streamlit')")
 
 
 
