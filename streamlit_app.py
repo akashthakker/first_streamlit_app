@@ -49,7 +49,6 @@ try:
 #except URLError as e:
   
      #streamlit.stop()
-import snowflake.connector
      
      #my_cur = my_cnx.cursor()
     
