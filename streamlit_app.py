@@ -32,9 +32,9 @@ streamlit.dataframe(fruits_to_show)
 
 #create the repeatble code block(called a function)
 def get_fruityvice_data(this_fruit_choice):
-     fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + this_fruit_choice)
-     fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())                                 
-     return fruityvice_normalized
+  fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + this_fruit_choice)
+  fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())                                 
+  return fruityvice_normalized
 
 #New section to display fruitvice api response
 streamlit.header('Fruityvice Fruit Advice!')
@@ -50,9 +50,9 @@ try:
      
 streamlit.header('The fruit load list contains:')
 def get_fruit_load_list():
-  with my_cnx.cursor() as my_cur:
-  my_cur.execute("select * from fruit_load_list")
-  return my_cur.fetchall()
+ with my_cnx.cursor() as my_cur:
+ my_cur.execute("select * from fruit_load_list")
+ return my_cur.fetchall()
 
      #Add a button to load the fruit
 if streamlit.button('Get Fruit Load List'):
